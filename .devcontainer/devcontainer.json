@@ -1,0 +1,16 @@
+{
+    "name": "Log Anomaly Detector",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "forwardPorts": [8000],
+    "portsAttributes": {
+        "8000": {
+            "label": "Application",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "postStartCommand": "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+}

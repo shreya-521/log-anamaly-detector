@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Anomaly Detector</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Log Anomaly <span class="accent-text">Detector</span></h1>
+            <div class="status-badge" id="systemStatus">System Online - Monitoring Logs</div>
+        </header>
+        
+        <div class="dashboard">
+            <div class="stats-panel">
+                <div class="stat-card">
+                    <h3>Total Logs Analyzed</h3>
+                    <div class="stat-value" id="totalLogs">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Anomalies Detected</h3>
+                    <div class="stat-value anomaly-text" id="totalAnomalies">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Current Threat Level</h3>
+                    <div class="stat-value" id="threatLevel">LOW</div>
+                </div>
+            </div>
+
+            <div class="log-panel">
+                <h2>Live Server Traffic</h2>
+                <div class="table-container">
+                    <table id="logTable">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>IP Address</th>
+                                <th>Method</th>
+                                <th>Path</th>
+                                <th>Status</th>
+                                <th>Bytes</th>
+                                <th>Resp Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logBody">
+                            <!-- Logs will be inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
